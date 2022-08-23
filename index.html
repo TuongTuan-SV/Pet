@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+  <meta name = "keywords" charset="utf-8" content="web HTML,CSS" >
+  <meta name= “description” content = "Learn about HTML, CSS">
+  <meta name="author" content="Tăng Tường Tuấn">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <script type="text/javascript" src="javascript/jquery-3.6.0.min.js"></script>
+  
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+  <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.css">
+  <script src="bootstrap-3.4.1-dist/js/jquery.min.js"></script>
+  <script src="bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+  <script src="bootstrap-3.4.1-dist/js/less-1.7.0.min.js"></script>
+  <script src="bootstrap-3.4.1-dist/less/bootstrap.less"></script>
+    
+  <style>
+  
+  </style>
+
+  <title>Document</title>
+
+</script>
+<link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+
+<link href="./css/headers.css" rel="stylesheet">
+<link href="./css/dashboard.css" rel="stylesheet">
+<link href="./css/style.css" rel="stylesheet">
+<link href="./css/chatbox.css" rel="stylesheet">
+</head>
+<body>   
+
+<!-- Header -->
+
+<div id="menu" class="sticky-top">
+  <header class="navbar navbar-dark py-3 border-bottom flex-md-nowrap p-0 shadow">
+    <div class="container d-flex flex-wrap justify-content-center ">
+      <a  class="col-5 d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-decoration-none">
+        <span id="title"><i class="fas fa-paw"></i>Pets Paradise</span>
+      </a>
+
+      <form class="col-7 col-lg-auto mb-3 mb-lg-0 my-search" >
+        <div class='input-group'>
+          <input class='form-control' type='text' name='search' placeholder='Tìm Kiếm' />
+          <span class="input-group-btn">
+            <button type='submit' class='btn btn-default search'>
+              <span class='glyphicon glyphicon-search'></span>
+            </button>
+          </span>
+        </div>
+      </form>
+      <button class="btn btn-default m-" id="Login1" >
+        <ul class="nav">
+          <a class="nav-link link-dark px-2"><i class="far fa-user"></i>Login
+          </a>
+        </ul>
+        
+      </button>
+      <button class="btn " id="cart" >
+        <span class="badge" id="slsanpham">0</span>
+        <a class="nav-link link-dark px-2"><i class="fas fa-shopping-basket fa-2x"></i>
+       
+        </a>
+      </button>
+      <button class="btn btn-info d-md-none collapsed" id="sidebarmenu" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <!-- gio hang -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title col-2">Giỏ Hàng</h5>
+                <span class="close ">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="cart-row">
+                  <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                  <span class="cart-price cart-header cart-column">Giá</span>
+                  <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                </div>
+                <div class="cart-items">
+
+                </div>
+                <div class="cart-total">
+                    <strong class="cart-total-title">Tổng Cộng:</strong>
+                    <span class="cart-total-price">0VNĐ</span>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success close-footer">Tiếp Tuc Mua Hàng</button>
+                <a href="#thanhtoan" type="button" aria-controls="thanhtoan" role="tab button" data-toggle="tab" class="nav-link btn btn-primary order">Thanh Toán</a>
+            </div>
+        </div>
+      </div>
+      <!-- login -->
+      <div id="Login" class="modal1">
+        <main class="form-signin">
+         
+          <form>
+            <div class="modal-header">
+              <h4 class="modal-title col-3">Please sign in</h4>
+              <span class="close closelogin">&times;</span>
+            </div>
+          
+           
+            <div class="form mt-2 mb-3">
+              <input type="email" class="form-control login-form" placeholder="Email address">
+             
+            </div>
+            <div class="form">
+              <input type="password" class="form-control login-form" placeholder="Password">
+            </div>
+        
+            <div class="checkbox mb-3 login-checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="w-50 btn btn-lg btn-primary mb-3 login-button" type="submit">Sign in</button>
+          
+          </form>
+        </main>
+        
+      </div>
+    </div>
+   
+  </header>
+  <!-- menu -->
+  <nav class="py-2 border-bottom color-3">
+    <div class="container d-flex flex-wrap my-container">
+      <ul class="nav" id="mytabs" role="tablist">
+        <li role="presentation" class="nav-item menu-tabs active stroke" id="trangchu"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="nav-link link-dark px-2 tabs ">Trang Chủ</a></li>
+        <li role="presentation" class="nav-item menu-tabs dropdown " id="sanpham"><a href="#item-Dog-product" aria-controls="item" role="tab" data-toggle="tab" class="nav-link link-dark px-2 tabs dropdown-toggle">Sản Phẩm</a>
+          <ul class="dropdown-menu">
+            <div class="row">   
+                <div class="position-sticky d-flex justify-content-between flex-wrap flex-md-nowrap  ">
+                  <ul class="nav flex-row CTSP">
+                    <li role="presentation" class="nav-item menu-tabs ">
+                      <a href="#item-Dog-product" aria-controls="dog-product" role="tab" data-toggle="tab" class="nav-link sidebar-product" >
+                        <i class="fas fa-dog"></i>
+                        Sẩn Phẩm Cho Chó
+                      </a>
+                    </li>
+                    <li role="presentation" class="nav-item menu-tabs ">
+                      <a href="#item-Cat-product" aria-controls="dog-product" role="tab" data-toggle="tab" class="nav-link sidebar-product" >
+                        <i class="fas fa-cat"></i>
+                        Sẩn Phẩm Cho Mèo
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </ul>
+        </li>
+        <li role="presentation" class="nav-item menu-tabs stroke" ><a href="#home" aria-controls="" role="tab" data-toggle="tab" class="nav-link link-dark px-2 tabs">Tin Tức</a></li>
+        <li role="presentation" class="nav-item menu-tabs stroke" ><a href="#home" aria-controls="" role="tab" data-toggle="tab" class="nav-link link-dark px-2 tabs">Liên Hệ</a></li>
+        <li role="presentation" class="nav-item menu-tabs stroke" id="admin"><a href="#dasboard" aria-controls="dasboard" role="tab" data-toggle="tab" class="nav-link link-dark px-2 tabs">Dashboard</a></li>
+      </ul>
+    </div>
+   </nav>
+   
+  <!-- Back to top -->
+  <a id="button"></a>
+  <!-- chat box -->
+  <div class="floating-chat">
+    <i class="fa fa-comments" aria-hidden="true"></i>
+    <div class="chat">
+    
+        <div class="header">
+            <span class="title">
+              <span class="TextRed">Pet Paradise </span>Chat Box
+            </span>
+            <button style="color: white;">
+              <i class="fa fa-times" aria-hidden="true" id="chat-close"></i>
+          </button > 
+                         
+        </div>
+        
+        <ul class="messages">
+          <li class="other">Pet Paradise có thể giúp gì cho bạn ạ ?</li>
+        </ul>
+        <div class="footer">
+            <div class="text-box" contenteditable="true" disabled="true"></div>
+            <button id="sendMessage">send</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- content -->
+<div class="tab-content my-tabs">
+  <!-- Trang chủ -->
+  <div role="tabpanel" class="tab-pane fade in active tab-a" id="home">
+          <div id="carousel-example-generic" class="carousel carousel-fade slide" data-ride="carousel">
+          <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+    
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img src="./Image/slider/About_Hero.jpg" alt="">
+                <div class="carousel-caption">
+                
+                </div>
+              </div>
+              <div class="item">
+                <img src="./Image/slider/slider2.jpg" alt="">
+                <div class="carousel-caption">
+                  
+                </div>
+              </div>
+              <div class="item">
+                <img src="./Image/slider/slider3.jpg" alt="">
+                <div class="carousel-caption">
+           
+                </div>
+              </div>
+              
+            </div>
+            <!-- Controls -->
+      
+               <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+ 
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+     
+              
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          
+           
+            </div>
+            <div class="b-example-divider"></div>
+            <div class="populer-product">
+              <h1 id="populer-product-title"><strong>Sản phẩm phổ biến</strong></h1>
+              <main class=" ms-sm-auto  px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+                  <div class="row">   
+                    <div class="col-sm-6 col-md-3 ">
+                      <div class="thumbnail">
+                        <div class="background"></div>
+                        <img class="img-prd" src="./Image/product/dog/dog-2-1.png">
+                        <div class="caption col text-center content-product">
+                          <a class="content-product-h3">Ferplast Atlas Deluxe Open</a>
+                          <div class="price">
+                            <p class="money" title="585000">585.000₫</p>
+                          </div>
+                          <input type="hidden" class="cart-quantity-input" value="1">
+                          <button class="giohang btn btn-default btn-cart">Thêm vào giỏ</button>
+                          <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                            <div  style="display: none;">
+                              <img class="img-prd" src="./Image/product/dog/dog-2-1.png" >
+                              <p class="money" title="585000">585.000₫</p>
+                              <p class="content-product-h3">Ferplast Atlas Deluxe Open</p >
+                            </div>
+                            <div class="motasanpham" style="display:none;">
+                              <br>
+                              <h4><strong>Ferplast Atlas Deluxe Open - Lồng vận chuyển size S</strong></h4>
+                                 
+                    
+                              <br>
+                              <p>Sản phẩm được sản xuất từ loại nhựa cứng rất an toàn khi vận chuyển chó mè <br> <br>
+                                 Cùng với thiết kê cửa sổ thoáng khí thông minh tạo sự thoải mái khi chó mèo ở bên trong. <br>
+                                 * Kích thước : 51 x 30 x 34 cm (dài * rộng * cao) 
+                              </p>
+                              <p>
+                                <br>
+                               <h4><strong>Giới thiệu về Ferplast :</strong></h4><br>
+                               Ferplast, có trụ sở tại Castelgomberto (tỉnh Vicenza - Ý), được thành lập vào năm 1966 bởi Carlo Vaccari.<br>
+                               Trong 50 năm, Ferplast đã tham gia nghiên cứu và tạo ra các sản phẩm sáng tạo, an toàn với chất lượng cao<br>
+                               nhằm đảm bảo cho sự chăm sóc thoải mái của vật nuôi. <br>
+                               Công ty dành nhiều khoản đầu tư đáng kể cho nghiên cứu những công nghệ tiên tiến cho việc sản xuất.<br><br>
+          
+                               Là một doanh nghiệp thương mại điển hình của vùng Đông Bắc nước Ý, ngày nay Ferplast sản xuất hơn 2000<br>
+                               loại sản phẩm, có khoảng 1.000 nhân viên, phân phối không dưới 80 quốc gia trên thế giới và có chi nhánh tại<br>
+                               Ý, Pháp, Đức, Anh, Scandinavia, Ba Lan, Ukraina, Slovakia, Nga, Benelux và Brazil, có 3 nhà máy sản xuất ở Ý,<br>
+                               Ukraina và Cộng hòa Slovak.<br><br>
+                              </p>
+                          </div>
+                        </a>
+                        </div>
+                        </div>  
+                      </div> 
+                        <div class="col-sm-6 col-md-3">
+                          <div class="thumbnail">
+                            <div class="background"></div>
+                           <img class="img-prd" src="./Image/product/dog-cat/dog-cat-1-1.png" >
+                            <div class="caption col text-center content-product">
+                              <a class="content-product-h3">Mon Ami Bella - Bàn chải vuông </a>
+                              <div class="price">
+                                <p class="money" title="35000">35.000₫</p>
+                              </div>
+                              <input type="hidden" class="cart-quantity-input" value="1">
+                              <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                              <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                                <div  style="display: none;">
+                                  <img class="img-prd" src="./Image/product/dog-cat/dog-cat-1-1.png" >
+                                  <p class="money " title="35000">35.000₫</p>
+                                  <p class="content-product-h3">Mon Ami Bella - Bàn chải vuông 
+                                  </p>
+                                </div>
+                                <div class="motasanpham" style="display:none;">
+                                  <br>
+                                      <h4><strong>Bàn chải vuông tự động BELLA</strong></h4>
+                                    <br>
+                                    <p>Sản phẩm được sản xuất từ chất liệu nhựa cao cấp và lưỡi lược được gia công từ sắt giúp tạo sự chắc chắn<br> <br>
+                                      và an toàn cho vật nuôi của bạn. Thiết kế tiện lợi của sản phẩm giúp lấy lông sau khi chải dễ dàng và tiện lợi
+                                      hơn.
+                                    </p>
+                                    <p>
+                                      <br>
+                                    <h4><strong>Giới thiệu về Mon Ami :</strong></h4><br>
+                                    Cityzoo có mặt tại Việt Nam từ năm 1999, công ty có vốn đầu tư của Pháp. Với niềm đam mê thú cưng,<br>
+                                    Cityzoo đã tìm hiểu và cho ra đời dòng sản phẩm mang tên Mon Ami, đáp ứng đầy đủ các nhu cầu giải trí,<br>
+                                    chăm sóc cho vật nuôi của bạn.<br>
+                                    Công ty dành nhiều khoản đầu tư đáng kể cho nghiên cứu những công nghệ tiên tiến cho việc sản xuất.<br><br>
+          
+                                    Cityzoo thành công và trở thành công ty dẫn đầu trong trong lĩnh vực phụ kiện chăm sóc vật nuôi tại thị<br>
+                                    trường Việt Nam do lợi thế có nhà máy sản xuất đủ tiêu chuẩn xuất khẩu đi các nước châu Âu và kho chứa<br>
+                                    hàng nhập khẩu rộng trên 15.000m2 tại Củ Chi – TPHCM.<br><br><br>
+                                    </p>
+                              </div>
+                            </a>
+                            </div>
+                            </div>  
+                          </div> 
+                          <div class="col-sm-6 col-md-3">
+                            <div class="thumbnail">
+                              <div class="background"></div>
+                              <img class="img-prd" src="./Image/product/cat/cat-1.png" >
+                              <div class="caption col text-center content-product">
+                                <a class="content-product-h3">Ciao-Creamy hộp 50 thanh vị gà</a>
+                                <div class="price">
+                                  <p class="money" title="438000">438.000đ</p>
+                                </div>
+                                <input type="hidden" class="cart-quantity-input" value="1">
+                                <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                                <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                                  <div  style="display: none;">
+                                    <img class="img-prd" src="./Image/product/cat/cat-1.png" >
+                                    <p class="money " title="438000">438.000₫</p>
+                                    <p class="content-product-h3">Ciao-Creamy hộp 50 thanh vị gà </p>
+                                  </div>
+                                  <div class="motasanpham" style="display:none;">
+                                    <br>
+                                    <h4><strong> CIAO-CREAMY HỘP 50 THANH MIX VỊ GÀ CHO MÈO</strong></h4>
+                                    <p>Ciao Churu là một trong những món bánh thưởng hấp dẫn nhất đối với các cô cậu mèo.<br>
+                                      Dạng sốt siêu mịn cùng mùi vị hấp dẫn, đảm bảo bé mèo nhà bạn không thể rời khỏi tuýp<br>
+                                      Ciao Churu 1 phút nào.
+                                    </p>
+                                  <p>
+                                  <h4><strong>Công dụng:</strong></h4>
+                                  Hộp 50 thanh súp thưởng Ciao Churu Mix vị cá cho mèo chính hãng dạng súp<br>
+                                  dễ tiêu hóa vì hấp thụ , bổ xung thêm nước giúp hạn chế tối đa các bệnh <br>
+                                  về sỏi thận, tiết niệ Giàu taurine và chất dinh dưỡng khác giúp mắt mèo sáng hơn,lông bóng mượt hơn.<br>
+                                  Công ty dành nhiều khoản đầu tư đáng kể cho nghiên cứu những công nghệ tiên tiến cho việc sản xuất.
+                                  <br>
+                                  </p>
+                                </div>
+                              </a>
+                              </div>
+                              </div>  
+                            </div> 
+                            <div class="col-sm-6 col-md-3">
+                              <div class="thumbnail">
+                                <div class="background"></div>
+                               <img class="img-prd" src="./Image/product/cat/cat-3.png" >
+                                <div class="caption col text-center content-product">
+                                  <a class="content-product-h3">Nệm gấu trúc ABC số 4</a>
+                                  <div class="price">
+                                    <p class="money" title="150000">150.000đ</p>
+                                  </div>
+                                  <input type="hidden" class="cart-quantity-input" value="1">
+                                  <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                                  <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                                    <div  style="display: none;">
+                                      <img class="img-prd" src="./Image/product/cat/cat-3.png" >
+                                      <p class="money " title="150000">150.000đ</p>
+                                      <p class="content-product-h3">Nệm gấu trúc ABC số 4
+                                      </p>
+                                    </div>
+                                    <div class="motasanpham" style="display:none;">
+                                      <br>
+                                      <h3>Thông tin chi tiết về Sản phẩm</h3>
+                                      <br>
+                                      <h4><strong>Nệm gấu trúc ABC số 4</strong> </h4>
+                                          <br>
+                                          <p>Với nhiều người, chó mèo không chỉ là động vật giúp giữ nhà, đuổi chuột mà còn là người bạn nhỏ thân thiết và rất trung thành. <br>
+                                            Do đó, hãy thể hiện tình yêu thương của bạn dành cho “người bạn nhỏ” đáng yêu này bằng cách  <br>
+                                            trang bị cho chúng một chiếc nệm nằm êm ái và xinh xắn của ABC để thú cưng có một nơi thư giãn thật thoải mái. <br>
+                                          </p>
+                                          <p>
+                                            <br>
+                                          <h4><strong>ĐẶC ĐIỂM NỔI BẬT :</strong></h4><br>
+                                          Chất liệu cotton thông thoáng, dễ vệ sinh, rất phù hợp với khí hậu nóng ẩm ở Việt Nam.<br>
+                                          Bề mặt nằm có 2 lớp nệm tạo sự êm ái, thú cưng nhà bạn sẽ luôn có cảm giác được nâng niu và yêu chiều. <br>
+                                          Thiết kế sinh động với gam màu nổi bật và hình ngộ nghĩnh họa tiết mang đến sự quen thuộc và gần gũi cho thú cưng đáng yêu trong nhà. <br> <br>
+                                          </p>
+                                  </div>
+                                </a>
+                                </div>
+                                </div>  
+                              </div> 
+                      </div>
+                </div>
+              </main>
+              </div>
+            <div class="b-example-divider"></div>
+        <div  id="footer">
+          <footer class="py-5">
+            <div class="row">
+              <div class="col medium-3 small-12 large-3">
+                <h4><strong>Liên hệ</strong></h4>
+                <ul class="nav flex-column " >
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 "><i class="fas fa-map-marker-alt"></i>  319 C16 Lý Thường Kiệt, Phường 15, Quận 11, Tp.HCM</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 "><i class="fas fa-mobile-alt"></i>  087 897 5231</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 "><i class="fas fa-envelope"></i>  PetLove@gmail.com</a></li>
+               
+                </ul>
+              </div>
+              <div class="col medium-3 small-12 large-3">
+                <h4><strong>Hỗ trợ</strong></h4>
+                <ul class="nav flex-column " >
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 "><i class="fas fa-question"></i>  FAQ</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 "><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Chăm sóc khách hàng</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 "><i class="fas fa-shipping-fast"></i>  Vận chuyển và Đổi trả hàng</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 "><i class="fas fa-phone"></i>  Liên hệ</a></li>
+                </ul>
+              </div>
+              <div class="col medium-3 small-12 large-3">
+                <form>
+                  <h4>Subscribe to our newsletter</h4>
+                  <p>Đăng ký để nhận được được thông tin mới nhất từ chúng tôi.</p>
+                  <div class="d-flex w-100 gap-2">
+                    <label for="newsletter1" class="visually-hidden"> Email address</label>
+                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                    <button class="btn success-button" type="button">Subscribe</button>
+                  </div>
+                  <div class="social-media">
+                      <a href="" class="social-media-inner"><i class="fab fa-facebook-square fa-3x"></i></a>
+                      <a href="" class="social-media-inner"><i class="fab fa-twitter fa-3x"></i></a>
+                      <a href="" class="social-media-inner"><i class="fab fa-instagram fa-3x"></i></a>
+                  </div>
+                
+                </form>
+              </div>
+            </div>
+       
+            <div class="d-flex justify-content-between py-4 my-4 border-top">
+              <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+            </div>
+          </footer>
+        </div>  
+  </div>
+  <!-- Sản Phẩm -->
+  <div role="tabpanel" class="tab-pane fade in tab-a" id="item-Dog-product">
+    <div class="container-fluid">
+      <div class="row">
+        <main class=" ms-sm-auto px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+               <div class="row">
+                <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail">
+                    <div class="background"></div>
+                  <img class="img-prd" src="./Image/product/dog/dog-2-1.png" >
+                     
+                    <div class="caption col text-center content-product">
+                      <a class="content-product-h3">Ferplast Atlas Deluxe Open</a>
+                      <div class="price">
+                        <p class="money" title="585000">585.000₫</p>
+                      </div>
+                      <input type="hidden" class="cart-quantity-input" value="1">
+                      <button class="giohang btn btn-default btn-cart">Thêm vào giỏ</button>
+                      <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                        <div  style="display: none;">
+                          <img class="img-prd" src="./Image/product/dog/dog-2-1.png" >
+                          <p class="money" title="585000">585.000₫</p>
+                          <p class="content-product-h3">Ferplast Atlas Deluxe Open</p >
+                        </div>
+                        <div class="motasanpham" style="display:none;">
+                          <br>
+                          <h4><strong>Ferplast Atlas Deluxe Open - Lồng vận chuyển size S</strong></h4>
+                             
+                
+                          <br>
+                          <p>Sản phẩm được sản xuất từ loại nhựa cứng rất an toàn khi vận chuyển chó mè <br> <br>
+                             Cùng với thiết kê cửa sổ thoáng khí thông minh tạo sự thoải mái khi chó mèo ở bên trong. <br>
+                             * Kích thước : 51 x 30 x 34 cm (dài * rộng * cao) 
+                          </p>
+                          <p>
+                            <br>
+                           <h4><strong>Giới thiệu về Ferplast :</strong></h4><br>
+                           Ferplast, có trụ sở tại Castelgomberto (tỉnh Vicenza - Ý), được thành lập vào năm 1966 bởi Carlo Vaccari.<br>
+                           Trong 50 năm, Ferplast đã tham gia nghiên cứu và tạo ra các sản phẩm sáng tạo, an toàn với chất lượng cao<br>
+                           nhằm đảm bảo cho sự chăm sóc thoải mái của vật nuôi. <br>
+                           Công ty dành nhiều khoản đầu tư đáng kể cho nghiên cứu những công nghệ tiên tiến cho việc sản xuất.<br><br>
+      
+                           Là một doanh nghiệp thương mại điển hình của vùng Đông Bắc nước Ý, ngày nay Ferplast sản xuất hơn 2000<br>
+                           loại sản phẩm, có khoảng 1.000 nhân viên, phân phối không dưới 80 quốc gia trên thế giới và có chi nhánh tại<br>
+                           Ý, Pháp, Đức, Anh, Scandinavia, Ba Lan, Ukraina, Slovakia, Nga, Benelux và Brazil, có 3 nhà máy sản xuất ở Ý,<br>
+                           Ukraina và Cộng hòa Slovak.<br><br>
+                          </p>
+                      </div>
+                    </a>
+                    </div>
+                   
+                    </div>  
+                  </div> 
+                <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail">
+                    <div class="background"></div>
+                    <img class="img-prd" src="./Image/product/dog-cat/dog-cat-1.png" >
+                    <div class="caption col text-center content-product">
+                      <a class="content-product-h3">Mon Ami Bella - Bàn chải vuông 
+                      </a>
+                      <div  class="price">
+                        <p class="money" title="35000">35.000₫</p>
+              
+                      </div>
+                      <input type="hidden" class="cart-quantity-input" value="1">
+                      <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                      <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                        <div  style="display: none;">
+                          <img class="img-prd" src="./Image/product/dog-cat/dog-cat-1.png" >
+                          <p class="money " title="35000">35.000₫</p>
+                        <p class="content-product-h3">Mon Ami Bella - Bàn chải vuông 
+                        </p>
+                      </div>
+                      <div class="motasanpham" style="display:none;">
+                        <br>
+                            <h4><strong>Bàn chải vuông tự động BELLA</strong></h4>
+                          <br>
+                          <p>Sản phẩm được sản xuất từ chất liệu nhựa cao cấp và lưỡi lược được gia công từ sắt giúp tạo sự chắc chắn<br> <br>
+                            và an toàn cho vật nuôi của bạn. Thiết kế tiện lợi của sản phẩm giúp lấy lông sau khi chải dễ dàng và tiện lợi
+                            hơn.
+                          </p>
+                          <p>
+                            <br>
+                          <h4><strong>Giới thiệu về Mon Ami :</strong></h4><br>
+                          Cityzoo có mặt tại Việt Nam từ năm 1999, công ty có vốn đầu tư của Pháp. Với niềm đam mê thú cưng,<br>
+                          Cityzoo đã tìm hiểu và cho ra đời dòng sản phẩm mang tên Mon Ami, đáp ứng đầy đủ các nhu cầu giải trí,<br>
+                          chăm sóc cho vật nuôi của bạn.<br>
+                          Công ty dành nhiều khoản đầu tư đáng kể cho nghiên cứu những công nghệ tiên tiến cho việc sản xuất.<br><br>
+
+                          Cityzoo thành công và trở thành công ty dẫn đầu trong trong lĩnh vực phụ kiện chăm sóc vật nuôi tại thị<br>
+                          trường Việt Nam do lợi thế có nhà máy sản xuất đủ tiêu chuẩn xuất khẩu đi các nước châu Âu và kho chứa<br>
+                          hàng nhập khẩu rộng trên 15.000m2 tại Củ Chi – TPHCM.<br><br><br>
+                          </p>
+                    </div>
+                    </a>
+                    </div>
+                    
+                    </div>  
+                  </div> 
+                  <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <div class="background"></div>
+                      <img class="img-prd" src="./Image/product/dog/dog-1-1.png" >
+                      <div class="caption col text-center content-product">
+                        <a class="content-product-h3">Áo mưa cho thú cưng size S</a>
+                        <div class="price">
+                          <p class="money" title="145000">145.000₫</p>
+                        </div>
+                        <input type="hidden" class="cart-quantity-input" value="1">
+                        <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                        <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                          <div  style="display: none;">
+                            <img class="img-prd" src="./Image/product/dog/dog-1-1.png" >
+                            <p class="money " title="145000">145.000₫</p>
+                            <p class="content-product-h3">Áo mưa cho thú cưng size S
+                            </p>
+                          </div>
+                          <div class="motasanpham" style="display:none;">
+                            <br>
+                            <h4><strong>Áo mưa cho thú cưng size S</strong></h4>
+                               
+                  
+                            <br>
+                            <p>
+                      
+        
+                              Cún cưng không thể… cầm ô, nhưng mặc áo mưa là việc hoàn toàn nằm trong tầm tay, <br> <br>
+                              giữ cho phần ngực và bụng của cún cưng được ấm áp và khô ráo trong những ngày mưa tầm tã. <br>
+                            </p>
+                      </div>
+                      </a>
+                      </div>
+                      </div>  
+                    </div> 
+                    <div class="col-sm-6 col-md-4">
+                      <div class="thumbnail">
+                        <div class="background"></div>
+                       <img class="img-prd" src="./Image/product/dog/dog-3-1.png" >
+                        <div class="caption col text-center content-product">
+                          <a class="content-product-h3">Banh nhựa cuộn cho chó mèo</a>
+                          <div class="price">
+                            <p class="money" title="30.000₫">30.000₫</p>
+                          </div>
+                          <input type="hidden" class="cart-quantity-input" value="1">
+                          <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                          <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                            <div  style="display: none;">
+                              <img class="img-prd" src="./Image/product/dog/dog-3-1.png" >
+                              <p class="money" title="30000">30.000₫</p>
+                            <p class="content-product-h3">Banh nhựa cuộn cho chó mèo
+                            </p>
+                          </div>
+                          <div class="motasanpham" style="display:none;">
+                              <h4><strong> Banh nhựa cuộn nhỏ cho chó mèo</strong></h4>
+                              <br>
+                              <p>Banh nhựa cuộn, đồ chơi sắc màu vui nhộn cho vật nuôi nhà bạn, bán rẻ nhất tại webgmail Petcity.vn <br>
+
+                                Màu sắc: nhiều mầu<br>
+                                
+                                Chất liệu: Nhựa<br>
+                                
+                                Loại: Đồ chơi<br>
+                                
+                                Xuất xứ : Trung Quốc<br>
+                              </p>
+                              <p>
+                        </div>
+                        </a>
+                        </div>
+                        </div>  
+                      </div> 
+                      <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                          <div class="background"></div>
+                         <img class="img-prd" src="./Image/product/dog/dog-4-1.png" >
+                            
+                          <div class="caption col text-center content-product">
+                            <a class="content-product-h3">Thức ăn cho chó cá trắng 1.5kg</a>
+                            <div class="price">
+                              <p class="money" title="196000">196.000₫</p>
+                            </div>
+                            <input type="hidden" class="cart-quantity-input" value="1">
+                            <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                            <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                              <div  style="display: none;">
+                                <img class="img-prd" src="./Image/product/dog/dog-4-1.png" >
+                                <p class="money " title="196000">196.000₫</p>
+                              <p class="content-product-h3">Thức ăn cho chó cá trắng 1.5kg
+                              </p>
+                            </div>
+                            <div class="motasanpham" style="display:none;">
+                              <br>
+                              Nature’s Protection Lifestyle Grain Free White Fish Thức ăn không ngũ cốc <br> giàu cá trắng dành cho chó trưởng thành thuộc tất cả các giống chó 1,5 kg
+                        
+   
+                              <br>
+                              <p>Tôm Krill Nam Cực, 100% nguồn cung cấp Omega-3, sẽ đem lại cho thú cưng của bạn với những <br> 
+                                 lợi ích đã được khoa học chứng minh. Theo các nghiên cứu mới nhất, Omega-3 từ tôm Krill <br> 
+                                 được hấp thụ hiệu quả hơn so với từ dầu cá thông thường gấp 2,5 lần.
+                                 <br>
+                                 <br>  
+                                 Nguồn cung cấp chính protein tốt nhất và dễ tiêu hóa – cá trắng, được biết đến là không gây dị ứng – hypoallergenic. <br>  
+                                 <br>  
+                                Cá tuyết Đại Tây Dương, cá tuyết méc-lang và cá tuyết đen có giá trị cho các đặc tính không gây dị ứng. <br>  
+                                Ngoài ra, loại cá trắng (White Fish) này có nhiều vitamin A và D, hơn các loại cá khác, rất cần thiết cho chó.
+                                <br>  
+                                <br>  
+                              </p>
+                          </div>
+                          </a>
+                          </div>
+                          </div>  
+                        </div> 
+                        <div class="col-sm-6 col-md-4">
+                          <div class="thumbnail">
+                            <div class="background"></div>
+                            <img class="img-prd" src="./Image/product/dog/dog-5-1.png" >
+                             
+                            <div class="caption col text-center content-product">
+                              <a class="content-product-h3">Yếm Police ABC 2cm xanh</a>
+                              <div class="price">
+                                <p class="money" title="99000">99.000₫</p>
+                              </div>
+                              <input type="hidden" class="cart-quantity-input" value="1">
+                              <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                              <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                                <div  style="display: none;">
+                                  <img class="img-prd" src="./Image/product/dog/dog-5-1.png" >
+                                  <p class="money " title="99000">99.000₫</p>
+                                  <p class="content-product-h3">Yếm Police ABC 2cm xanh
+                                  </p>
+                                </div>
+                                <div class="motasanpham" style="display:none;">
+                                  <br>
+                                  <h4><strong>Yếm Police ABC 2cm  xanh</strong></h4>
+                               
+                                  <br>
+                                  <p>Chiếc yếm Police ABC không những giúp bạn giữ chặt và theo sát chú thú cưng của mình <br> 
+                                    Nó còn là điểm nhấn nổi bật để chú thú cưng của bạn trông thật “cá tính” trong mọi chuyến đi dạo hoặc<br> 
+                                    chạy bộ đầy hứng khởi.
+                                     <br>
+                                     <br>  
+                                     Với thiết kế dạng yếm ôm sát cực kỳ chắc chắn, ABC là “người phụ tá” đắc lực và lý tưởng<br>
+                                     giúp bạn dễ dàng “quản lý” các chú cún hiếu động và tinh nghịch.  
+                                     <br>  
+                                    <br>  
+                                  </p>
+                            </div>
+                            </a>
+                            </div>
+                            </div>  
+                          </div> 
+                </div>
+          </div>
+        </main>
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="#">2<span class="sr-only"></span></a></li>
+            <li class=""><a href="#">3<span class="sr-only"></span></a></li>
+            <li class=""><a href="#">4<span class="sr-only"></span></a></li>
+            <li class=""><a href="#">5<span class="sr-only"></span></a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    
+  </div>
+  <div role="tabpanel" class="my-tapane tab-pane fade tab-a" id="item-Cat-product">
+    <div class="container-fluid">
+      <div class="row">
+        <main class=" ms-sm-auto px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+            <div class="row">
+              <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail">
+                    <div class="background"></div>
+                   <img class="img-prd" src="./Image/product/cat/cat-1.png" >
+                    
+                    <div class="caption col text-center content-product">
+                      <a class="content-product-h3">Ciao-Creamy hộp 50 thanh vị gà</a>
+                      <div class="price">
+                        <p class="money" title="438000">438.000₫</p>
+                      </div>
+                      <input type="hidden" class="cart-quantity-input" value="1">  
+                      <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                      <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                        <div  style="display: none;">
+                          <img class="img-prd" src="./Image/product/cat/cat-1.png" >
+                          <p class="money " title="438000">438.000₫</p>
+                          <p class="content-product-h3">Ciao-Creamy hộp 50 thanh vị gà
+                          </p>
+                        </div>
+                        <div class="motasanpham" style="display:none;">
+                          <br>
+                          <h4><strong> CIAO-CREAMY HỘP 50 THANH MIX VỊ GÀ CHO MÈO</strong></h4>
+                          <p>Ciao Churu là một trong những món bánh thưởng hấp dẫn nhất đối với các cô cậu mèo.<br>
+                            Dạng sốt siêu mịn cùng mùi vị hấp dẫn, đảm bảo bé mèo nhà bạn không thể rời khỏi tuýp<br>
+                            Ciao Churu 1 phút nào.
+                          </p>
+                        <p>
+                        <h4><strong>Công dụng:</strong></h4>
+                        Hộp 50 thanh súp thưởng Ciao Churu Mix vị cá cho mèo chính hãng dạng súp<br>
+                        dễ tiêu hóa vì hấp thụ , bổ xung thêm nước giúp hạn chế tối đa các bệnh <br>
+                        về sỏi thận, tiết niệ Giàu taurine và chất dinh dưỡng khác giúp mắt mèo sáng hơn,lông bóng mượt hơn.<br>
+                        Công ty dành nhiều khoản đầu tư đáng kể cho nghiên cứu những công nghệ tiên tiến cho việc sản xuất.
+                        <br>
+                        </p>
+                      </div>
+                    </a>
+                    </div>
+                    </div>  
+                </div> 
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <div class="background"></div>
+                 <img class="img-prd" src="./Image/product/dog-cat/dog-cat-1-1.png" >
+                    
+                  <div class="caption col text-center content-product">
+                    <a class="content-product-h3">Mon Ami Bella - Bàn chải vuông </a>
+                    <div class="price">
+                      <p class="money" title="35000">35.000₫</p>
+                    </div>
+                    <input type="hidden" class="cart-quantity-input" value="1">
+                    <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                    <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                      <div  style="display: none;">
+                        <img class="img-prd" src="./Image/product/dog-cat/dog-cat-1-1.png" >
+                        <p class="money " title="35000">35.000₫</p>
+                        <p class="content-product-h3">Mon Ami Bella - Bàn chải vuông 
+                        </p>
+                      </div>
+                      <div class="motasanpham" style="display:none;">
+                        <br>
+                        <h4><strong>Bàn chải vuông tự động BELLA</strong></h4>
+                      <br>
+                      <p>Sản phẩm được sản xuất từ chất liệu nhựa cao cấp và lưỡi lược được gia công từ sắt giúp tạo sự chắc chắn<br> <br>
+                        và an toàn cho vật nuôi của bạn. Thiết kế tiện lợi của sản phẩm giúp lấy lông sau khi chải dễ dàng và tiện lợi
+                        hơn.
+                      </p>
+                      <p>
+                        <br>
+                      <h4><strong>Giới thiệu về Mon Ami :</strong></h4><br>
+                      Cityzoo có mặt tại Việt Nam từ năm 1999, công ty có vốn đầu tư của Pháp. Với niềm đam mê thú cưng,<br>
+                      Cityzoo đã tìm hiểu và cho ra đời dòng sản phẩm mang tên Mon Ami, đáp ứng đầy đủ các nhu cầu giải trí,<br>
+                      chăm sóc cho vật nuôi của bạn.<br>
+                      Công ty dành nhiều khoản đầu tư đáng kể cho nghiên cứu những công nghệ tiên tiến cho việc sản xuất.<br><br>
+  
+                      Cityzoo thành công và trở thành công ty dẫn đầu trong trong lĩnh vực phụ kiện chăm sóc vật nuôi tại thị<br>
+                      trường Việt Nam do lợi thế có nhà máy sản xuất đủ tiêu chuẩn xuất khẩu đi các nước châu Âu và kho chứa<br>
+                      hàng nhập khẩu rộng trên 15.000m2 tại Củ Chi – TPHCM.<br><br><br>
+                      </p>
+                    </div>
+                  </a>
+                  </div>
+                  </div>  
+                </div> 
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <div class="background"></div>
+                  <img class="img-prd" src="./Image/product/cat/cat-2.png" >
+                       
+                  <div class="caption col text-center content-product">
+                    <a class="content-product-h3">AFP Vintage Cây mèo leo 3 tầng</a>
+                    <div class="price">
+                      <p class="money" title="3451000">3.451.000₫</p>
+                    </div>
+                    <input type="hidden" class="cart-quantity-input" value="1">
+                    <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                    <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                      <div  style="display: none;">
+                        <img class="img-prd" src="./Image/product/cat/cat-2.png" >
+                        <p class="money " title="3451000">3.451.000₫</p>
+                          <p class="content-product-h3">AFP Vintage Cây mèo leo 3 tầng
+                          </p>
+                        </div>
+                        <div class="motasanpham" style="display:none;">
+                          <br>
+                          <h3>Thông tin chi tiết về Sản phẩm</h3>
+                      
+                          
+                              Cây mèo leo Vintage 3 tầng
+            
+                              <br>
+                              <p>SCây mèo leo 3 tầng sẽ giúp bạn tiết kiệm không gian và cho mèo một khu sinh hoạt đầy đủ nhất. <br> 
+                                Mèo sẽ leo lên cao khi vui chơi và nghỉ ngơi ở dưới khi cần ngủ.<br> 
+                                <br> 
+                                Kích thước: 50 x 50 x 148 cm
+                              </p>
+                              <p>
+                                <br>
+                              <h4><strong>Giới thiệu về AFP :</strong></h4><br>
+                              Được thành lập từ năm 1997, với 20 năm kinh nghiệm, mục tiêu của AFP và Pawise là cung cấp các  <br>
+                              sản phẩm dành cho thú cưng với chất lượng tốt nhất, an toàn nhất với 95% sản phẩm đã được xuất khẩu  <br>
+                              sang thị trường Châu Âu và Châu Mỹ. <br> <br>
+          
+                              AFP và Pawise luôn cố gắng hết sức để thiết kế những sản phẩm nhằm đáp ứng các nhu cầu của vật nuôi  <br>
+                              cũng như phù hợp với phong cách của chủ nhân.
+                              <br> <br>
+                              Với các nhà thiết kế đầy tính sáng tạo giàu kinh nghiệm, nhân viên chuyên nghiệp và đội ngũ quản lý có năng lực, <br>
+                              AFP và Pawise đang khẳng định vị thế của mình trong lĩnh vực chăm sóc thú cưng, mong muốn mang đến những  <br>
+                              sản phẩm an toàn, đáng tin cậy cùng dịch vụ hiệu quả.
+                              <br> <br>
+                              </p>
+                    </div>
+                  </a>
+                  </div>
+                  </div>  
+                </div> 
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <div class="background"></div>
+                 <img class="img-prd" src="./Image/product/cat/cat-3.png" >
+                  <div class="caption col text-center content-product">
+                    <a class="content-product-h3">Nệm gấu trúc ABC số 4</a>
+                    <div class="price">
+                    <p class="money" title="435000">435.000₫</p>
+                  </div>
+                    <input type="hidden" class="cart-quantity-input" value="1">
+                    <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                    <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                      <div  style="display: none;">
+                        <img class="img-prd" src="./Image/product/cat/cat-3.png" >
+                        <p class="money " title="435000">435.000₫</p>
+                        <p class="content-product-h3">Nệm gấu trúc ABC số 4
+                        </p>
+                      </div>
+                      <div class="motasanpham" style="display:none;">
+                        <br>
+                        <h3>Thông tin chi tiết về Sản phẩm</h3>
+                        <br>
+                        <h4><strong>Nệm gấu trúc ABC số 4</strong> </h4>
+                            <br>
+                            <p>Với nhiều người, chó mèo không chỉ là động vật giúp giữ nhà, đuổi chuột mà còn là người bạn nhỏ thân thiết và rất trung thành. <br>
+                              Do đó, hãy thể hiện tình yêu thương của bạn dành cho “người bạn nhỏ” đáng yêu này bằng cách  <br>
+                              trang bị cho chúng một chiếc nệm nằm êm ái và xinh xắn của ABC để thú cưng có một nơi thư giãn thật thoải mái. <br>
+                            </p>
+                            <p>
+                              <br>
+                            <h4><strong>ĐẶC ĐIỂM NỔI BẬT :</strong></h4><br>
+                            Chất liệu cotton thông thoáng, dễ vệ sinh, rất phù hợp với khí hậu nóng ẩm ở Việt Nam.<br>
+                            Bề mặt nằm có 2 lớp nệm tạo sự êm ái, thú cưng nhà bạn sẽ luôn có cảm giác được nâng niu và yêu chiều. <br>
+                            Thiết kế sinh động với gam màu nổi bật và hình ngộ nghĩnh họa tiết mang đến sự quen thuộc và gần gũi cho thú cưng đáng yêu trong nhà. <br> <br>
+                            </p>
+                    </div>
+                  </a>
+                  </div>
+                  </div>  
+                </div> 
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <div class="background"></div>
+                <img class="img-prd" src="./Image/product/cat/cat-4.png" >
+                  <div class="caption col text-center content-product">
+                    <a class="content-product-h3">Bàn cào móng hình ngói cho mèo</a>
+                    <div class="price">
+                    <p class="money" title="80000">80.000₫</p>
+                  </div>
+                    <input type="hidden" class="cart-quantity-input" value="1">
+                    <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                    <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                      <div  style="display: none;">
+                        <img class="img-prd" src="./Image/product/cat/cat-4.png" >
+                        <p class="money " title="80000">80.000₫</p>
+                        <p class="content-product-h3">Bàn cào móng hình ngói cho mèo
+                        </p>
+                      </div>
+                      <div class="motasanpham" style="display:none;">
+                        <br>
+                        <h3>Thông tin chi tiết về Sản phẩm</h3>
+                        <br>
+                        <h4><strong>Bàn cào móng hình ngói  cho mèo</strong> </h4>
+                            <br>
+                            <p>Cào móng cho mèo là điều chủ nuôi nào cũng quan tâm. Cào là bản năng vốn có của loài mèo. <br>
+                              Vì vậy, bạn không thể làm gì để ngăn chặn hay xóa bỏ đặc tính tự nhiên của chúng; <br>
+                              không cho mèo cào chẳng khác gì không cho chúng ta nháy mắt.<br>
+                              Cào giúp mèo loại bỏ móng cũ ở vuốt và đánh dấu lãnh thổ của chúng bằng cách lưu lại mùi đặc trưng ở dưới đệm chân.<br>
+                              Nếu không có môi trường thích hợp, mèo sẽ thỏa mãn bản năng của chúng bằng cách cào đồ nội thất như đi văng, <br>
+                              thảm và những tài sản quý giá của bạn. Đó là lý do các dụng cụ móng chuyên dụng cho mèo ra đời.<br>
+                              Mua đồ cào móng đúng loại và đặt đúng chỗ, bạn sẽ vừa có mèo ngoan vừa có nhà đẹp.<br>
+                              <br>
+                            </p>  
+                    </div>
+                  </a>
+                  </div>
+                  </div>  
+                </div> 
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <div class="background"></div>
+                 <img class="img-prd" src="./Image/product/cat/cat-5.jpg" >
+                  <div class="caption col text-center content-product">
+                    <a class="content-product-h3">Dây dắt yên ngựa tròn kèm nơ</a>
+                    <div class="price">
+                    <p class="money" title="119000">119.000₫</p>
+                  </div>
+                    <input type="hidden" class="cart-quantity-input" value="1">
+                    <button class="giohang  btn btn-default btn-cart">Thêm vào giỏ</button>
+                    <a href="#chitietsanpham" aria-controls="ctsp" role="button" data-toggle="tab" class="ctsp  btn btn-default "> Chi Tiết
+                      <div  style="display: none;">
+                        <img class="img-prd" src="./Image/product/cat/cat-5.jpg" >
+                        <p class="money " title="119000">119.000₫</p>
+                      <p class="content-product-h3">Dây dắt yên ngựa tròn kèm nơ
+                      </p>
+                    </div>
+                    <div class="motasanpham" style="display:none;">
+                      <br>
+                      <h3>Thông tin chi tiết về Sản phẩm</h3>
+                      <br>
+                      <h4><strong>Dây dắt yên ngựa tròn kèm nơ 0.8x130cm</strong> </h4>
+                          <br>
+                          <p>Hình thức đẹp mắt, màu sắc tươi sáng của dây dắt chó còn rất phù hợp, <br> 
+                            giúp tô điểm thêm vẻ đẹp của các chú chó kể cả với các màu lông khác nhau. <br>
+                            Bền chắc, giá hợp lý: Chất liệu vải dù giúp dây dắt chó có yếm và tay cầm trợ lực có sự chắc chắn,<br>
+                            tạo độ bền rất cao so với các sản phẩm dây dắt chó làm bằng chất liệu khác. <br>
+                            Bên cạnh đó thiết kế dày dặn cũng tăng thêm độ bền của dây dắt chó và tạo cảm giác thoải mái, êm ái cho thú cưng của bạn.<br>
+                            <br>
+                          </p>
+                          <h4><strong>Mô tả sản phẩm </strong></h4>
+                          <p>
+                            Kích thước: dài 130cm
+                            <br> <br>
+                            Bản Rộng:
+                            <br> <br>
+                            0.6cm Dành cho chó mèo 2-4kg
+                            <br> <br>
+                            0.8cm Dành Cho Chó mèo 5-8kg <br> <br>
+                          </p>
+                    </div>
+                  </a>
+                  </div>
+                  </div>  
+                </div> 
+        </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+   </div>
+   <div role="tabpanel" class="tab-pane dog tab-a" id="chitietsanpham">
+    <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
+    <div class="container ">
+        <div class="card">
+            <div class="container-fliud">
+                <form name="frmsanphamchitiet" method="post">
+                 
+
+                    <div class="wrapper row">
+                        <div class="col-md-6">
+                                <div class="tab-pane pic">
+                                   <img id = 'ctsp-img' src="" class="img-prd">
+                                </div>
+                        </div>
+                        <div class="details col-md-6">
+                            <h3 class="product-title content-product-h3" id="ctsp-title"></h3>
+                            <section class='rating-widget'>
+
+                              <!-- Rating Stars Box -->
+                              <div class='rating-stars'>
+                                <ul id='stars'>
+                                  <li class='star' title='Poor' data-value='1'>
+                                    <i class='fa fa-star fa-fw'></i>
+                                  </li>
+                                  <li class='star' title='Fair' data-value='2'>
+                                    <i class='fa fa-star fa-fw'></i>
+                                  </li>
+                                  <li class='star' title='Good' data-value='3'>
+                                    <i class='fa fa-star fa-fw'></i>
+                                  </li>
+                                  <li class='star' title='Excellent' data-value='4'>
+                                    <i class='fa fa-star fa-fw'></i>
+                                  </li>
+                                  <li class='star' title='WOW!!!' data-value='5'>
+                                    <i class='fa fa-star fa-fw'></i>
+                                  </li>
+                                </ul>
+                              </div>
+                            </section>
+                            <div class="price" id="ctsp-price">
+                              <h1 class="money ctsp-money" id= 'ctsp-money' title=""> </h1>
+                            </div>
+                            <p class="vote"><strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo
+                                <strong>Uy
+                                    tín</strong>!</p>
+                            <div class="cart-quantity ctsp-quantity">
+                                <label for="soluong">Số lượng đặt mua:</label>
+                                <input type="number" class="cart-quantity-input" id = "ctsp-quantity" value="1">
+                            </div>
+                            <div class="action">
+                              <a class=" btn btn-default btn-cart mt-2 mb-2" >Thêm vào giỏ hàng</a>
+                          </div>
+                          
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card ">
+            <div class="container-fluid d-flex justify-content-between flex-column flex-wrap " >
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active mota"><a href="#mota" aria-controls="mota" role="tab" data-toggle="tab">Mô Tả</a></li>
+                <li role="presentation" class="danhgia"><a href="#danhgia" aria-controls="mota" role="tab" data-toggle="tab">Đánh Giá</a></li>
+           
+              </ul>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="mota">
+
+              </div>
+              <div role="tabpanel" class="tab-pane fade " id="danhgia">
+                <div class="review-form-inner has-border">
+                  <div id="respond" class="comment-respond">
+                    <h3 id="reply-title" class="comment-reply-title">Hãy là người đầu tiên nhận xét </h3>
+                    <form method="post" id="commentform" class="comment-form" novalidate="">
+                   <p class="comment-form-comment">
+                     <label for="comment" class="comment-1">Nhận xét của bạn&nbsp;
+                       <span class="required">*</span>
+                      </label>
+                      <textarea id="comment" name="comment" cols="45" rows="8" required="">
+                      </textarea>
+                    </p
+                    ><p class="comment-form-author">
+                          <label for="author">Tên&nbsp;<span class="required">*</span>
+                          </label>
+                          <input id="author" name="author" type="text" value="" size="30" required="">
+                        </p>
+                        <p class="comment-form-email">
+                          <label for="email">Email&nbsp;<span class="required">*</span>
+                          </label><input id="email" name="email" type="email" value="" size="30" required="">
+                        </p>
+                        <p class="comment-form-cookies-consent">
+                          <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> 
+                          <label for="wp-comment-cookies-consent">Lưu tên của tôi, email, và trang web trong trình duyệt này cho lần bình luận kế tiếp của tôi.
+                          </label>
+                        </p>
+                       
+                            <p class="form-submit">
+                              <input name="submit" type="submit" id="submit" class="submit btn btn-success mt-1 ml-5" value="Gửi đi"> 
+                            </p>
+                </form>
+                  </div>
+              </div>
+
+            </div>
+              </div>
+             
+              </div>
+            </div>
+        </div>
+  </div>
+  <!-- Dasboard -->
+  <div role="tabpanel" class="tab-pane fade in" id="dasboard">
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky pt-5">
+            <ul class="nav flex-column">
+              <li role="presentation" class="nav-item">
+                <a href="#dashboard" aria-current="page" role="tab" data-toggle="tab" class="nav-link active">
+                  <span data-feather="home"></span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Orders
+                </a>
+              </li>
+              <li role="presentation" class="nav-item">
+                <a href="#product" aria-current="page" role="tab" data-toggle="tab" class="nav-link">
+                  <span data-feather="shopping-cart"></span>
+                  Products
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Customers
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Reports
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Integrations
+                </a>
+              </li>
+            </ul>
+    
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="link-secondary" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Current month
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Last quarter
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Social engagement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Year-end sale
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        </nav>
+        <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4">
+          <div class=" align-items-center">
+            <div class="tab-content">
+            <div role="tabpanel" class=" tab-pane fade in active" id="dashboard">
+               <div class="row"> 
+                  <div class=" col-md-3 col-sm-12 col-xs-12 ">
+                      <div class="board">
+                        <div class="panel panel-primary">
+                          <div class="number">
+                            <h3></h3>
+                            <h3>44.023</h3>
+                            <small>Daily Visits</small>
+                          </div>
+                          <div class="icon"> 
+                            <i class="fa fa-eye fa-5x red"></i>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class=" col-md-3 col-sm-12 col-xs-12">
+                    <div class="board">
+                      <div class="panel panel-primary">
+                        <div class="number">
+                          <h3></h3>
+                          <h3>12.031</h3>
+                          <small>SALES</small>
+                        </div>
+                        <div class="icon"> 
+                          <i class="fa fa-shopping-cart fa-5x blue"></i>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class=" col-md-3 col-sm-12 col-xs-12">
+                  <div class="board">
+                    <div class="panel panel-primary">
+                      <div class="number">
+                        <h3></h3>
+                        <h3>5.035</h3>
+                        <small>COMMENT</small>
+                      </div>
+                      <div class="icon"> 
+                        <i class="fa fa-comments fa-5x green"></i>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class=" col-md-3 col-sm-12 col-xs-12">
+                <div class="board">
+                  <div class="panel panel-primary">
+                    <div class="number">
+                      <h3></h3>
+                      <h3>12.000</h3>
+                      <small>DAILY PROFITS</small>
+                    </div>
+                    <div class="icon"> 
+                      <i class="fa fa-dollar-sign fa-5x yellow"></i>
+                    </div>
+                  </div>
+                </div>
+            </div>  
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="h2">Lượt truy cập theo ngày</h1>
+              <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group me-2">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                  <span data-feather="calendar"></span>
+                  This week
+                </button>
+              </div>
+            </div>
+            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+            <h2>Staffs</h2>
+              <div class="table-responsive text-center">
+                <table class="table table-striped table-sm table-hover">
+                  <thead>
+                      <tr class="text-center">
+                      <th scope="col" class="text-center">S No.</th>
+                      <th scope="col" class="text-center">First Name</th>
+                      <th scope="col" class="text-center">Last Name</th>
+                      <th scope="col" class="text-center">User Name</th>
+                      <th scope="col" class="text-center">Email ID.</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>John</td>
+                      <td>Doe</td>
+                      <td>John15482</td>
+                      <td>name@gmail.com</td>
+                  </tr>
+                  <tr>
+                      <td>2</td>
+                      <td>Kimsila</td>
+                      <td>Marriye</td>
+                      <td>Kim1425</td>
+                      <td>name@gmail.com</td>
+                  </tr>
+                  <tr>
+                      <td>3</td>
+                      <td>Rossye</td>
+                      <td>Nermal</td>
+                      <td>Rossy1245</td>
+                      <td>name@gmail.com</td>
+                  </tr>
+                  <tr>
+                      <td>4</td>
+                      <td>Richard</td>
+                      <td>Orieal</td>
+                      <td>Rich5685</td>
+                      <td>name@gmail.com</td>
+                  </tr>
+                  <tr>
+                      <td>5</td>
+                      <td>Jacob</td>
+                      <td>Hielsar</td>
+                      <td>Jac4587</td>
+                      <td>name@gmail.com</td>
+                  </tr>
+                  <tr>
+                      <td>6</td>
+                      <td>Wrapel</td>
+                      <td>Dere</td>
+                      <td>Wrap4585</td>
+                      <td>name@gmail.com</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+               </div>
+              </div>
+            <div role="tabpanel" class=" tab-pane fade pt-5" id="product">
+              <table class="table  table-bordered">
+      
+                <thead>
+                
+                  <tr>
+                   
+                    <th scope="col">#</th>
+                    <th scope="col">Hinh San Pham</th>
+                    <th scope="col">Ten San Pham</th>
+                    <th scope="col">Gia San Pham</th>  
+                    <th>
+                    <button class="btn btn-success add-product">Them San Pham</button>
+                  </th>
+                  </tr>
+                </thead>
+                
+                <tbody id="Product-list">
+                 
+                </tbody>
+              </table>
+        
+              <div class="modal form-add-product" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal">Thêm Sản Phẩm</h5>
+                      <button type="button" class="close Close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="add-product-form">
+                        <div class="form-group">
+                          <label for="Product-Name">Tên Sản Phẩm</label>
+                          <input type="email" class="form-control" id="Product-Name">
+                        </div>
+                        <div class="form-group">
+                          <label for="Product-Price">Giá Sản Phẩm</label>
+                          <input type="number" class="form-control" min="1" step="any" id="Product-Price">
+                        </div>
+                        <div class="form-group">
+                          <label for="Product-Picture">Hình Sản Phẩm</label>
+                          <input type="file" class="form-control-file" id="Product-Picture">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary add-product-btn" >Save changes</button>
+                      <button type="button" class="btn btn-secondary Close" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    
+  </div>
+  <div  role="tabpanel" class="tab-pane fade in" id="thanhtoan">
+    <main role="main">
+      <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
+      <div class="container mt-4">
+          <form class="needs-validation" name="frmthanhtoan" method="post"
+              action="#">
+              <input type="hidden" name="kh_tendangnhap" value="dnpcuong">
+  
+              <div class=" text-center">
+                  <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
+                  <h2>Thanh toán</h2>
+                  <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+              </div>
+  
+              <div class="row">
+                  <div class="col-md-4 order-md-2 mb-4">
+                      <h4 class="d-flex justify-content-between align-items-center mb-3">
+                          <span class="text-muted">Giỏ hàng</span>
+                          <span class="badge badge-secondary badge-pill" id = "checkout-badge">0</span>
+                      </h4>
+                      <ul class="list-group mb-3" id="ds-sanpham">
+                          <li class="list-group-item d-flex justify-content-between">
+                              <span>Tổng thành tiền</span>
+                              <strong class="total-all">0</strong>
+                          </li>
+                      </ul>
+  
+  
+                      <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Mã khuyến mãi">
+                          <div class="input-group-append">
+                              <button type="submit" class="btn btn-secondary">Xác nhận</button>
+                          </div>
+                      </div>
+  
+                  </div>
+                  <div class="col-md-8 order-md-1">
+                      <h4 class="mb-3">Thông tin khách hàng</h4>
+  
+                      <div class="row">
+                          <div class="col-md-12">
+                              <label for="kh_ten">Họ tên</label>
+                              <input type="text" class="form-control" name="kh_ten" id="kh_ten"
+                                  value="Dương Nguyễn Phú Cường" readonly="">
+                          </div>
+                          <div class="col-md-12">
+                              <label for="kh_gioitinh">Giới tính</label>
+                              <input type="text" class="form-control" name="kh_gioitinh" id="kh_gioitinh" value="Nam"
+                                  readonly="">
+                          </div>
+                          <div class="col-md-12">
+                              <label for="kh_diachi">Địa chỉ</label>
+                              <input type="text" class="form-control" name="kh_diachi" id="kh_diachi"
+                                  value="130 Xô Viết Nghệ Tỉnh" readonly="">
+                          </div>
+                          <div class="col-md-12">
+                              <label for="kh_dienthoai">Điện thoại</label>
+                              <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai"
+                                  value="0915659223" readonly="">
+                          </div>
+                          <div class="col-md-12">
+                              <label for="kh_email">Email</label>
+                              <input type="text" class="form-control" name="kh_email" id="kh_email"
+                                  value="phucuong@ctu.edu.vn" readonly="">
+                          </div>
+                          <div class="col-md-12">
+                              <label for="kh_ngaysinh">Ngày sinh</label>
+                              <input type="text" class="form-control" name="kh_ngaysinh" id="kh_ngaysinh"
+                                  value="11/6/1989" readonly="">
+                          </div>
+                          <div class="col-md-12">
+                              <label for="kh_cmnd">CMND</label>
+                              <input type="text" class="form-control" name="kh_cmnd" id="kh_cmnd" value="362209685"
+                                  readonly="">
+                          </div>
+                      </div>
+  
+                      <h4 class="mb-3">Hình thức thanh toán</h4>
+  
+                      <div class="d-block my-3">
+                          <div class="custom-control custom-radio">
+                              <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required=""
+                                  value="1">
+                              <label class="custom-control-label" for="httt-1">Tiền mặt</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                              <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required=""
+                                  value="2">
+                              <label class="custom-control-label" for="httt-2">Chuyển khoản</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                              <input id="httt-3" name="httt_ma" type="radio" class="custom-control-input" required=""
+                                  value="3">
+                              <label class="custom-control-label" for="httt-3">Ship COD</label>
+                          </div>
+                      </div>
+                      <hr class="mb-4">
+                      <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang">Đặt
+                          hàng</button>
+                          
+                  </div>
+              </div>
+          </form>
+  
+      </div>
+      <!-- End block content -->
+  </main>
+  </div>
+<script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="./javascript/dashboard.js"></script>
+<script src="./javascript/cart.js"></script>
+<script src="./javascript/rating-system.js"></script>
+<script src="./javascript/button.js"></script>
+<script src="./javascript/chatbox.js"></script>
+<script src="./javascript/login.js"></script>
+<script src="./javascript/thanhtoan.js"></script>
+<script src="./javascript/add_product.js"></script>
+</body>
+</html>
